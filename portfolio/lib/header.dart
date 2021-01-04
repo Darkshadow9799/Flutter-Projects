@@ -15,8 +15,7 @@ class HeaderScreen extends StatelessWidget {
         .lineHeight(1)
         .size(context.isMobile ? 10 : 15)
         .bold
-        .make()
-        .shimmer();
+        .make();
     return SafeArea(
       child: VxBox(
               child: VStack([
@@ -27,16 +26,11 @@ class HeaderScreen extends StatelessWidget {
               children: [
                 VStack([
                   if (context.isMobile) 50.heightBox else 10.heightBox,
-                  CustomAppBar().shimmer(primaryColor: Coolors.accentColor),
+                  CustomAppBar(),
                   30.heightBox,
                   nameWidget,
                   15.heightBox,
-                  VxBox()
-                      .color(Coolors.accentColor)
-                      .size(60, 10)
-                      .make()
-                      .px4()
-                      .shimmer(primaryColor: Coolors.accentColor),
+                  VxBox().color(Coolors.accentColor).size(60, 10).make().px4(),
                   30.heightBox,
                   SocialAccounts(),
                 ]).pSymmetric(
@@ -150,6 +144,13 @@ class SocialAccounts extends StatelessWidget {
         color: Colors.white,
       ).mdClick(() {
         launch("https://medium.com/@jainaayush99.aj");
+      }).make(),
+      20.widthBox,
+      Icon(
+        AntDesign.linkedin_square,
+        color: Colors.white,
+      ).mdClick(() {
+        launch("https://www.linkedin.com/in/aayush-jain-88a674148/");
       }).make(),
     ].hStack();
   }
